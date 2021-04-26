@@ -11,6 +11,7 @@ Component to provide user-feedback by short lived messages.
     ```pug
     #messagebox.gone
     ```
+- `messagebox°` available
 
 ## Structure
 - `stayDurationMS#`
@@ -23,7 +24,7 @@ Component to provide user-feedback by short lived messages.
 - `.error§`
 
 ## Specification
-- `stayDurationMS#` = per default 5000
+- `stayDurationMS#` = parameter for how long the messagebox stays visible (per default 5000)
 - `currentTimeoutId#` = here we see when there is a timeout running and have the handle to clear it
 - `messagebox°` = JS Object for the DOM element of the messagebox
 - `letDisappear§` = starts/resets timeout to call `§disappear`
