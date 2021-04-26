@@ -1,3 +1,4 @@
+[![hackmd-github-sync-badge](https://hackmd.io/sHf9p8mPS_yEh35_NxHeaw/badge)](https://hackmd.io/sHf9p8mPS_yEh35_NxHeaw)
 ###### tags: `strunfun`
 
 # [pwa-sources-messageboxmodule](https://github.com/JhonnyJason/pwa-sources-messageboxmodule) - messageboxmodule
