@@ -1,20 +1,14 @@
-messageboxmodule = {name: "messageboxmodule"}
 ############################################################
-#region printLogFunctions
-log = (arg) ->
-    if allModules.debugmodule.modulesToDebug["messageboxmodule"]?  then console.log "[messageboxmodule]: " + arg
-    return
-ostr = (obj) -> JSON.stringify(obj, null, 4)
-olog = (obj) -> log "\n" + ostr(obj)
-print = (arg) -> console.log(arg)
+#region debug
+import { createLogFunctions } from "thingy-debug"
+{log, olog} = createLogFunctions("messageboxmodule")
 #endregion
 
 ############################################################
 stayDurationMS = 5000
 currentTimeoutId = null
 
-############################################################
-messageboxmodule.initialize = ->
+export initialize = ->
     log "messageboxmodule.initialize"
     c = allModules.configmodule
     if c.messageboxStayDurationMS? then stayDurationMS = c.messageboxStayDurationMS
@@ -35,7 +29,7 @@ disappear = ->
     return    
 
 ############################################################
-messageboxmodule.info = (message) ->
+export info = (message) ->
     log "messageboxmodule.info"
     return unless typeof message == "string"
     messagebox.textContent = message
@@ -43,12 +37,10 @@ messageboxmodule.info = (message) ->
     letDisappear()
     return
 
-messageboxmodule.error = (message) ->
+export error = (message) ->
     log "messageboxmodule.error"
     return unless typeof message == "string"
     messagebox.textContent = message
     messagebox.className = "error"
     letDisappear()
     return
-
-module.exports = messageboxmodule
